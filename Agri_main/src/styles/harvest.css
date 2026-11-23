@@ -1,0 +1,110 @@
+.workspace-header .workspace-brandbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.workspace-header .workspace-page-links { justify-self: end; }
+.harvest-dashboard { padding-inline: 0; }
+.harvest-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: clamp(26rem, 46vw, 42rem);
+  border-radius: 1.25rem;
+  background: #385932;
+}
+.harvest-scene {
+  position: absolute;
+  inset: -1%;
+  z-index: -2;
+  animation: field-pan 20s ease-in-out infinite alternate;
+  transform-origin: 47% 51%;
+}
+.harvest-photo, .harvest-foreground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.harvest-photo {
+  object-fit: cover;
+  object-position: 47% 56%;
+}
+.harvest-foreground {
+  background: url('/media/farmer-tending-greens.jpg') 47% 56% / cover no-repeat;
+  mask-image: linear-gradient(transparent 72%, black 92%);
+  transform-origin: 50% 70%;
+  animation: foreground-breeze 4.5s ease-in-out infinite alternate;
+}
+@keyframes field-pan {
+  from { transform: scale(1); }
+  to { transform: scale(1.035) translateX(-.25%); }
+}
+@keyframes foreground-breeze {
+  from { transform: skewX(-.65deg); }
+  to { transform: skewX(.65deg); }
+}
+.harvest-banner::after {
+  content: '';
+  position: absolute;
+  inset: 45% 0 0;
+  z-index: -1;
+  background: linear-gradient(transparent, rgb(8 27 16 / .86));
+  pointer-events: none;
+}
+.harvest-services {
+  display: inline-flex;
+  align-items: stretch;
+  gap: .5rem;
+  margin: clamp(1rem, 2.4vw, 2.25rem);
+}
+.harvest-services a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: 44px;
+  padding: .65rem .9rem;
+  border-radius: .55rem;
+  background: #fffffff5;
+  color: #234c31;
+  box-shadow: 0 1px 6px #1e331b26;
+  font-size: .8rem;
+  font-weight: 650;
+  transition: background-color .16s ease, border-color .16s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .harvest-scene, .harvest-foreground { animation: none; }
+}
+.harvest-services a:focus-visible {
+  outline: 3px solid #183a26;
+  outline-offset: 3px;
+}
+.harvest-caption {
+  position: absolute;
+  inset: auto clamp(1rem, 2.4vw, 2.25rem) clamp(1rem, 2.4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .65rem;
+  color: white;
+}
+.harvest-caption h1 { font: 500 clamp(2.3rem, 5vw, 4.5rem)/1.05 var(--font-sans); letter-spacing: -.04em; }
+.harvest-caption p { font-size: clamp(.9rem, 1.25vw, 1.1rem); line-height: 1.5; }
+.harvest-guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+.harvest-guide a { position: relative; padding: 1.4rem; border: 1px solid #dce5d8; border-radius: .8rem; background: white; color: #254d30; }
+.harvest-guide h2 { font-weight: 650; font-size: 1.2rem; margin: 1rem 0 .5rem; }
+.harvest-guide p { font-size: .9rem; color: #54604f; line-height: 1.6; }
+.harvest-guide svg:last-child { position: absolute; right: 1.4rem; top: 1.4rem; }
+@media (max-width: 820px) {
+  .workspace-header .workspace-brandbar { grid-template-columns: 1fr auto; gap: .75rem; }
+  .workspace-header .workspace-utility-nav { grid-row: 2; grid-column: 1 / -1; justify-self: center; }
+  .workspace-header .workspace-page-links { grid-row: 1; grid-column: 2; }
+}
+@media (max-width: 600px) {
+  .workspace-header .workspace-brandbar { padding-inline: .9rem; }
+  .harvest-services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: .8rem; gap: .35rem; }
+  .harvest-services a { flex-direction: column; gap: .25rem; padding: .55rem .2rem; font-size: .7rem; line-height: 1.2; text-align: center; }
+  .harvest-guide { grid-template-columns: 1fr; }
+}

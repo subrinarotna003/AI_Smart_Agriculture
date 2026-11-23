@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0d631b"/>
+  <!-- stem -->
+  <path d="M32 52V28" stroke="#cbffc2" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- left leaf -->
+  <path d="M32 36c-8-2-14-8-16-16 10 1 17 7 18 16Z" fill="#88d982"/>
+  <!-- right leaf -->
+  <path d="M32 32c8-2 14-8 16-16-10 1-17 7-18 16Z" fill="#acf4a4"/>
+  <!-- AI node -->
+  <circle cx="32" cy="22" r="5" fill="#ffffff"/>
+  <circle cx="32" cy="22" r="2.2" fill="#0d631b"/>
+  <circle cx="24" cy="18" r="1.6" fill="#cbffc2"/>
+  <circle cx="40" cy="18" r="1.6" fill="#cbffc2"/>
+  <path d="M26 19l4 2M38 19l-4 2" stroke="#cbffc2" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

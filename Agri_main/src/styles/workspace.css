@@ -1,0 +1,52 @@
+.workspace-root { min-height: 100vh; display: flex; flex-direction: column; background: #f8faf6; color: var(--color-on-surface); }
+.workspace-header { background: #fff; border-bottom: 1px solid #e0e8dd; }
+.workspace-brandbar { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; padding: 1.25rem 2.5rem; max-width: 100rem; margin: auto; }
+.workspace-brand { display: flex; gap: .75rem; align-items: center; color: #204b2d; font-size: 1.15rem; font-weight: 750; }
+.workspace-brand-icon { width: 2.7rem; height: 2.7rem; display: grid; place-items: center; border-radius: .85rem; background: #edf4e9; }
+.workspace-brand small { display: block; font-size: .55rem; letter-spacing: .16em; font-weight: 600; color: #728369; margin-top: .2rem; }
+.workspace-page-links { display: flex; align-items: center; gap: 1.75rem; }
+.workspace-page-links a { display: flex; align-items: center; gap: .5rem; color: #707c69; font-size: .8rem; font-weight: 600; }
+.workspace-page-links a[aria-current=page] { color: #285e31; }
+.workspace-navrow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 1.25rem; padding: .85rem 2.5rem; max-width: 100rem; margin: auto; border-top: 1px solid #f0f3ec; }
+.workspace-service-nav { display: flex; gap: .5rem; }
+.workspace-service-nav a { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .8rem .85rem; border: 1px solid #dce6d5; background: #f5f8f0; border-radius: .6rem; font-size: .73rem; line-height: 1.3; font-weight: 650; color: #385b31; white-space: nowrap; transition: background .2s, border-color .2s, transform .2s; }
+.workspace-service-nav svg { flex-shrink: 0; }
+.workspace-service-nav a:hover { background: #e7f0dd; border-color: #94ae80; transform: translateY(-2px); }
+.workspace-service-nav a[aria-current=page] { background: #255a35; color: white; border-color: #255a35; }
+.workspace-utility-nav { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
+.workspace-utility-nav a { display: flex; gap: .45rem; align-items: center; font-size: .8rem; color: #657360; font-weight: 550; padding: .65rem 0; transition: color .2s; }
+.workspace-utility-nav a:hover, .workspace-utility-nav a[aria-current=page] { color: #1c602b; }
+.workspace-nav-caption { justify-self: end; color: #899180; font-size: .7rem; font-style: italic; }
+.workspace-header a:focus-visible, .field-banner a:focus-visible, .field-banner button:focus-visible { outline: 2px solid #739e58; outline-offset: 5px; }
+.workspace-main { flex: 1; padding: 2rem 2.5rem 3rem; width: 100%; max-width: 100rem; margin: auto; }
+.workspace-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; border-top: 1px solid #e0e8dd; padding: 1.5rem 2.5rem; color: #79816f; font-size: .75rem; }
+.workspace-footer a { display: flex; align-items: center; gap: .5rem; color: #3c6137; font-weight: 600; }
+.dashboard-season { display: flex; gap: .5rem; align-items: center; font-size: .75rem; color: #79816f; }
+.dashboard-season > span { height: .4rem; width: .4rem; border-radius: 50%; background: #739e58; }
+.dashboard-banner.field-banner { position: relative; isolation: isolate; min-height: 36rem; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: 4rem; background: #3b7442; }
+.farm-scene { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -3; }
+.field-banner-shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #113b2be8 0%, #143c2bc9 31%, #1a432b50 56%, transparent 77%), linear-gradient(0deg, #103e3275, transparent 30%); }
+.field-banner .banner-copy { max-width: 40rem; padding-bottom: 2rem; }
+.field-banner .banner-kicker { display: flex; align-items: center; gap: .6rem; font-size: .65rem; color: #d4e7b7; margin-bottom: 1.5rem; }
+.field-banner .banner-kicker > span { height: .4rem; width: .4rem; background: #c2d890; border-radius: 50%; }
+.field-banner .banner-copy h1 { font-size: clamp(2.4rem, 4.6vw, 4.5rem); line-height: 1.1; letter-spacing: -.045em; }
+.field-banner .banner-copy h1 em { font-family: Georgia, serif; font-weight: 400; color: #d9eaaa; }
+.field-banner .banner-copy > p { color: #e1e9d9; font-size: 1rem; line-height: 1.8; margin: 1.5rem 0 2rem; }
+.field-banner-cta { display: inline-flex; align-items: center; gap: 1rem; background: #edf1d0; color: #234c2d; padding: 1rem 1.25rem; border-radius: .6rem; font-size: .8rem; font-weight: 700; transition: background .2s, transform .2s; }
+.field-banner-cta:hover { background: white; transform: translateY(-2px); }
+.field-banner-bottom { position: absolute; bottom: 1.5rem; left: 2rem; right: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; font-size: .7rem; color: #e2ebd5; }
+.field-motion-button { display: flex; align-items: center; gap: .5rem; cursor: pointer; padding: .55rem .75rem; border: 1px solid #ffffff50; background: #173a2d66; border-radius: 2rem; font-size: .7rem; color: white; backdrop-filter: blur(6px); }
+.rice-sway { transform-box: fill-box; transform-origin: bottom center; animation: rice-breeze 4.5s ease-in-out infinite alternate; }
+.field-cloud { animation: clouds-drift 30s ease-in-out infinite alternate; }
+.field-cloud-two { animation-duration: 42s; animation-direction: alternate-reverse; }
+.farmer-working-body { transform-box: fill-box; transform-origin: bottom center; animation: farmer-tend 5s ease-in-out infinite; }
+.farmer-working-arm { transform-box: fill-box; transform-origin: top right; animation: farmer-hoe 5s ease-in-out infinite; }
+.is-paused .farm-scene * { animation-play-state: paused; }
+@keyframes rice-breeze { from { transform: rotate(-4deg); } to { transform: rotate(6deg); } }
+@keyframes clouds-drift { from { transform: translateX(-25px); } to { transform: translateX(35px); } }
+@keyframes farmer-tend { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(5deg); } }
+@keyframes farmer-hoe { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(9deg); } }
+@media (max-width: 1250px) { .workspace-navrow { grid-template-columns: 1fr auto; } .workspace-nav-caption { display: none; } .workspace-utility-nav { gap: 1.25rem; } }
+@media (max-width: 900px) { .workspace-brandbar, .workspace-navrow { padding-inline: 1.5rem; } .workspace-main { padding: 1.5rem; } .workspace-navrow { gap: 1rem; } .workspace-service-nav a { padding: .75rem .65rem; font-size: .65rem; } .workspace-utility-nav { gap: 1rem; } .workspace-utility-nav a { font-size: .75rem; } .dashboard-banner.field-banner { padding: 2.5rem; min-height: 34rem; } .field-banner .farm-scene { width: 125%; left: -25%; } }
+@media (max-width: 700px) { .workspace-brandbar { padding: 1rem; flex-wrap: wrap; gap: 1rem; } .workspace-brand { font-size: 1rem; } .workspace-page-links { gap: 1rem; } .workspace-page-links a { font-size: .7rem; } .workspace-navrow { grid-template-columns: 1fr; padding: .75rem 1rem; gap: .5rem; } .workspace-service-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); } .workspace-service-nav a { white-space: normal; padding: .75rem .5rem; min-height: 3.25rem; } .workspace-utility-nav { gap: 2rem; } .workspace-main { padding: 1.25rem 1rem 2rem; } .dashboard-season { display: none; } .dashboard-banner.field-banner { min-height: 39rem; padding: 2rem 1.5rem; justify-content: flex-start; } .field-banner .banner-copy { padding-bottom: 12rem; } .field-banner .banner-copy h1 { font-size: clamp(2rem, 7vw, 3rem); } .field-banner .banner-copy > p { font-size: .875rem; margin: 1rem 0 1.5rem; } .field-banner .farm-scene { width: 195%; left: -95%; } .field-banner .field-farmer { transform: translateX(150px); } .field-banner-shade { background: linear-gradient(180deg, #153e2de8, #153e2d9c 45%, #153e2d05 75%, #153e2d70); } .field-banner-bottom { left: 1rem; right: 1rem; bottom: 1rem; } .field-banner-bottom > span { max-width: 10rem; font-size: .65rem; } .workspace-footer { padding: 1.5rem 1rem; font-size: .7rem; } }
+@media (prefers-reduced-motion: reduce) { .farm-scene * { animation: none !important; } .workspace-header a, .field-banner a { transition: none; } }

@@ -1,0 +1,70 @@
+:root {
+  --glass-fill: rgba(250, 255, 252, .71);
+  --glass-edge: rgba(104, 145, 128, .36);
+  --glass-sheen: linear-gradient(145deg, rgb(255 255 255 / .65), transparent 48%);
+  --glass-shadow: inset 0 1px 0 rgb(255 255 255 / .94), 0 5px 18px rgb(29 63 48 / .07);
+  --glass-blur: saturate(125%) blur(16px);
+}
+
+.app-root {
+  background-color: #edf4f0;
+  background-image:
+    radial-gradient(ellipse at 6% 16%, #cde5d5 0, transparent 40%),
+    radial-gradient(ellipse at 94% 52%, #cde2e8 0, transparent 45%),
+    linear-gradient(120deg, #eaf1e8, #f6f8ef 65%, #e5f1ed);
+  background-attachment: fixed;
+}
+
+.app-root :is(.workspace-header, .workspace-footer, .glass-panel, .service-panel,
+              .service-info, .service-options a, .harvest-services a, .harvest-guide a),
+.app-root > .workspace-brandbar {
+  background-color: var(--glass-fill);
+  background-image: var(--glass-sheen);
+  border-color: var(--glass-edge);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+.app-root :is(.harvest-services a, .service-info, .service-options a) {
+  border: 1px solid var(--glass-edge);
+}
+.app-root .harvest-services a { background-color: rgb(249 255 251 / .84); }
+.harvest-banner { box-shadow: 0 8px 28px rgb(30 60 47 / .12); }
+.workspace-root .workspace-footer { color: #4b6256; }
+.workspace-utility-nav a, .workspace-page-links a { border-radius: .5rem; padding: .55rem .65rem; }
+.app-root :where(button, input, textarea, select, ::file-selector-button) { font-family: inherit; }
+
+.app-root :where(a[href], button:enabled, select:enabled, summary, [role="button"]:not([aria-disabled="true"]), label.cursor-pointer) {
+  cursor: pointer;
+  transition-property: background-color, border-color, color, filter;
+  transition-duration: .16s;
+}
+.app-root :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid #155d3b;
+  outline-offset: 3px;
+}
+
+@media (hover: hover) {
+  .app-root :where(a[href]):hover { text-decoration: underline; text-underline-offset: .19em; }
+  .app-root :is(.harvest-services a, .service-options a, .harvest-guide a,
+                .workspace-page-links a, .workspace-utility-nav a, .workspace-service-nav a):hover {
+    color: #184d33;
+    background-color: #e0efe6;
+    border-color: #779784;
+    text-decoration: none;
+    transform: none;
+  }
+  .app-root :where(button:enabled, [role="button"]:not([aria-disabled="true"]), label.cursor-pointer):hover {
+    filter: brightness(.94);
+  }
+  .app-root :is(input:not([type="file"]), textarea, select):enabled:hover { border-color: #789786; }
+  .app-root input[type="file"]::file-selector-button:hover { background-color: #daebe2; }
+}
+.app-root :is(input, textarea, select):disabled, .app-root button:disabled { cursor: not-allowed; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root { --glass-fill: #f7faf7; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-root :is(a, button, input, textarea, select, label) { transition-duration: 0s; }
+}
